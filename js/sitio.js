@@ -89,7 +89,7 @@ function pintar(D) {
   /* Sobre mí */
   txt("#so-etiqueta", SO.etiqueta); htm("#so-titulo", em(SO.titulo));
   if (P.foto) { $("#so-foto").src = P.foto; $("#so-foto").alt = P.nombre || ""; } else $(".sobre-foto").hidden = true;
-  txt("#so-chip", P.titulo_profesional ? "Ing. en TIC" : "");
+  txt("#so-chip", P.chip_foto || ""); $("#so-chip").hidden = !P.chip_foto;
   htm("#so-parrafos", lista(SO.parrafos).map((p, i) => `<p class="rev d${Math.min(i + 1, 3)}">${em(p)}</p>`).join(""));
   htm("#so-datos", lista(SO.datos).map(d => `<li>${esc(d)}</li>`).join(""));
   const soWa = $("#so-wa");

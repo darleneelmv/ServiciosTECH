@@ -1,7 +1,7 @@
 {
   "nombre": "Darlene López",
-  "titulo_profesional": "Ingeniería en Tecnologías de la Información y Comunicación",
-  "etiqueta": "Ing. en TIC · México",
+  "titulo_profesional": "Desarrolladora web · Estudiante de Ingeniería en TIC",
+  "etiqueta": "Desarrollo web · México",
   "titular": "Tecnología que hace *crecer* tu negocio.",
   "palabras": [
     "páginas web",
@@ -35,5 +35,6 @@
   "instagram": "",
   "whatsapp_mensaje": "Hola Darlene 👋 Vi tu página y me gustaría información sobre tus servicios.",
   "foto": "/media/darlene.jpg",
-  "avatar": "/media/darlene-avatar.jpg"
+  "avatar": "/media/darlene-avatar.jpg",
+  "chip_foto": "Desarrolladora web"
 }

@@ -106,7 +106,8 @@ collections:
         file: contenido/perfil.json
         fields:
           - { name: nombre, label: "Nombre", widget: string }
-          - { name: titulo_profesional, label: "Título profesional", widget: string }
+          - { name: titulo_profesional, label: "Cómo te presentas (bajo tu nombre)", widget: string, hint: "Cuando te titules, cámbialo a «Ingeniera en TIC»." }
+          - { name: chip_foto, label: "Etiqueta sobre tu foto", widget: string, required: false }
           - { name: etiqueta, label: "Texto pequeño arriba", widget: string }
           - { name: titular, label: "Frase principal", widget: string, hint: "Pon *palabra* entre asteriscos para resaltarla." }
           - { name: palabras, label: "Palabras que se escriben solas (\"Hago …\")", widget: list, field: { name: palabra, label: "Palabra", widget: string } }
