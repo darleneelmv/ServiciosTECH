@@ -1,0 +1,65 @@
+{
+  "etiqueta": "Planes",
+  "titulo": "Elige cómo *empezar*",
+  "subtitulo": "Paquetes claros para que sepas qué recibes. Todos se ajustan a tu negocio y la cotización no tiene costo.",
+  "planes": [
+    {
+      "nombre": "Esencial",
+      "para": "Para empezar a tener presencia en internet",
+      "precio": "",
+      "nota": "",
+      "destacado": false,
+      "boton": "Cotizar Esencial",
+      "incluye": [
+        "Página de una sección (landing page)",
+        "Dominio propio .com o .com.mx",
+        "Hosting y certificado SSL (candado de seguridad)",
+        "Diseño adaptado a celular",
+        "Botón de WhatsApp y ubicación en Google Maps",
+        "Formulario de contacto"
+      ]
+    },
+    {
+      "nombre": "Negocio",
+      "para": "Para negocios que quieren vender y verse profesionales",
+      "precio": "",
+      "nota": "",
+      "destacado": true,
+      "etiqueta_destacado": "Más pedido",
+      "boton": "Cotizar Negocio",
+      "incluye": [
+        "Todo lo del plan Esencial",
+        "Sitio de hasta 5 secciones",
+        "Correo profesional con tu dominio (tu@tunegocio.com)",
+        "Panel para que edites textos, fotos y precios",
+        "Menú, catálogo o paquetes de servicios",
+        "SEO básico y alta en Google Business"
+      ]
+    },
+    {
+      "nombre": "A la medida",
+      "para": "Tiendas en línea, sistemas y automatizaciones",
+      "precio": "",
+      "nota": "",
+      "destacado": false,
+      "boton": "Platiquemos tu proyecto",
+      "incluye": [
+        "Tienda en línea con carrito y pagos",
+        "Sistemas de inventario, citas o membresías",
+        "Chatbots y automatizaciones",
+        "Usuarios y permisos para tu equipo",
+        "Reportes y panel de control",
+        "Capacitación para ti y tu equipo"
+      ]
+    }
+  ],
+  "todos_titulo": "Todos los proyectos incluyen",
+  "todos": [
+    "Dominio y accesos a tu nombre",
+    "Certificado SSL",
+    "Diseño responsivo",
+    "Carga rápida",
+    "Capacitación de uso",
+    "Soporte después de la entrega"
+  ]
+}

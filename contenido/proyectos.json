@@ -13,7 +13,36 @@
         "Sitio web",
         "Catálogo",
         "Responsivo"
-      ]
+      ],
+      "en_clientes": true
+    },
+    {
+      "nombre": "Devil's XS Garage",
+      "tipo": "Sitio web para taller de motos",
+      "descripcion": "Paquetes de servicio con precios, guía para elegir el servicio correcto y citas por WhatsApp para CDMX y Michoacán.",
+      "imagen": "/media/proyectos/devils-garage.jpg",
+      "link": "https://tubular-haupia-3f2322.netlify.app/",
+      "estado": "En línea",
+      "etiquetas": [
+        "Sitio web",
+        "Paquetes y precios",
+        "Citas por WhatsApp"
+      ],
+      "en_clientes": true
+    },
+    {
+      "nombre": "Rinconcito Dulcesito",
+      "tipo": "Sitio web para repostería",
+      "descripcion": "Menú de postres, pasteles nuevos y pedidos por WhatsApp con envío a domicilio en Puruándiro.",
+      "imagen": "/media/proyectos/rinconcito-dulcesito.jpg",
+      "link": "https://stunning-dragon-3ef76c.netlify.app/",
+      "estado": "En línea",
+      "etiquetas": [
+        "Sitio web",
+        "Menú",
+        "Pedidos por WhatsApp"
+      ],
+      "en_clientes": true
     },
     {
       "nombre": "Strong Gym Puruándiro",
@@ -26,7 +55,8 @@
         "Sitio web",
         "Sistema",
         "Membresías"
-      ]
+      ],
+      "en_clientes": true
     },
     {
       "nombre": "Portafolio UGC",
@@ -39,7 +69,8 @@
         "Portafolio",
         "Panel",
         "Videos"
-      ]
+      ],
+      "en_clientes": false
     },
     {
       "nombre": "Gold's Gym",
@@ -50,7 +81,9 @@
       "estado": "Próximamente",
       "etiquetas": [
         "Próximamente"
-      ]
+      ],
+      "en_clientes": false
     }
-  ]
+  ],
+  "clientes_titulo": "Negocios que ya confían en mi trabajo"
 }

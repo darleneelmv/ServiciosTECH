@@ -10,6 +10,7 @@
   },
   "secciones": {
     "servicios": true,
+    "planes": true,
     "proyectos": true,
     "video": true,
     "proceso": true,

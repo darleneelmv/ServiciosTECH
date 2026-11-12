@@ -51,12 +51,37 @@ collections:
               - { name: incluye, label: "Qué incluye", widget: list, field: { name: punto, label: "Punto", widget: string } }
               - { name: imagen, label: "Imagen de ejemplo", widget: image, required: false }
 
+      - name: planes
+        label: "💎 Planes"
+        file: contenido/planes.json
+        fields:
+          - { name: etiqueta, label: "Texto pequeño", widget: string }
+          - { name: titulo, label: "Título", widget: string }
+          - { name: subtitulo, label: "Subtítulo", widget: text, required: false }
+          - name: planes
+            label: "Planes"
+            label_singular: "plan"
+            widget: list
+            summary: "{{fields.nombre}} {{fields.precio}}"
+            fields:
+              - { name: nombre, label: "Nombre del plan", widget: string }
+              - { name: para, label: "¿Para quién es?", widget: string }
+              - { name: precio, label: "Precio", widget: string, required: false, hint: "Ej. Desde $3,500. Si lo dejas vacío dice «Cotización a tu medida»." }
+              - { name: nota, label: "Nota bajo el precio", widget: string, required: false, hint: "Ej. Pago único · IVA incluido" }
+              - { name: destacado, label: "Destacar este plan", widget: boolean, default: false }
+              - { name: etiqueta_destacado, label: "Etiqueta del destacado", widget: string, required: false, hint: "Ej. Más pedido" }
+              - { name: incluye, label: "Qué incluye", widget: list, field: { name: punto, label: "Punto", widget: string } }
+              - { name: boton, label: "Texto del botón", widget: string, required: false }
+          - { name: todos_titulo, label: "Título de la franja «Todos incluyen»", widget: string }
+          - { name: todos, label: "Todos los proyectos incluyen", widget: list, required: false, field: { name: punto, label: "Punto", widget: string } }
+
       - name: proyectos
         label: "🗂️ Proyectos"
         file: contenido/proyectos.json
         fields:
           - { name: etiqueta, label: "Texto pequeño", widget: string }
           - { name: titulo, label: "Título", widget: string }
+          - { name: clientes_titulo, label: "Texto de la franja de clientes", widget: string, required: false, hint: "Bajo la portada salen los nombres de tus proyectos En línea o Terminados." }
           - name: proyectos
             label: "Proyectos"
             label_singular: "proyecto"
@@ -74,6 +99,7 @@ collections:
                 default: "En línea"
                 options: ["En línea", "Terminado", "En desarrollo", "Próximamente"]
               - { name: etiquetas, label: "Etiquetas", widget: list, required: false, field: { name: etiqueta, label: "Etiqueta", widget: string } }
+              - { name: en_clientes, label: "Mostrar en la franja de clientes", widget: boolean, default: true }
 
       - name: perfil
         label: "👩‍💻 Perfil y portada"
@@ -169,6 +195,7 @@ collections:
             widget: object
             fields:
               - { name: servicios, label: "Servicios", widget: boolean, default: true }
+              - { name: planes, label: "Planes", widget: boolean, default: true }
               - { name: proyectos, label: "Proyectos", widget: boolean, default: true }
               - { name: video, label: "Video", widget: boolean, default: true }
               - { name: proceso, label: "Cómo trabajo", widget: boolean, default: true }

@@ -5,7 +5,7 @@
 (() => {
 "use strict";
 
-const ARCHIVOS = ["general", "perfil", "servicios", "proyectos", "video", "proceso", "porque", "faq", "contacto"];
+const ARCHIVOS = ["general", "perfil", "servicios", "planes", "proyectos", "video", "proceso", "porque", "faq", "contacto"];
 const $ = (s, c = document) => c.querySelector(s);
 const $$ = (s, c = document) => [...c.querySelectorAll(s)];
 const esc = s => String(s ?? "").replace(/[&<>"']/g, m => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m]));
@@ -52,7 +52,7 @@ async function cargar() {
 }
 
 function pintar(D) {
-  const G = D.general || {}, P = D.perfil || {}, SV = D.servicios || {}, PY = D.proyectos || {}, V = D.video || {},
+  const G = D.general || {}, P = D.perfil || {}, SV = D.servicios || {}, PL = D.planes || {}, PY = D.proyectos || {}, V = D.video || {},
         PR = D.proceso || {}, PQ = D.porque || {}, F = D.faq || {}, C = D.contacto || {};
 
   if (G.seo?.titulo) document.title = G.seo.titulo;
@@ -63,10 +63,10 @@ function pintar(D) {
   if (col.fondo) { raiz.setProperty("--fondo", col.fondo); raiz.setProperty("--fondo-2", `color-mix(in srgb, ${col.fondo} 88%, #1e293b)`); }
 
   /* Secciones y menú */
-  const vis = Object.assign({ servicios: true, proyectos: true, video: true, proceso: true, porque: true, faq: true, contacto: true }, G.secciones || {});
+  const vis = Object.assign({ servicios: true, planes: true, proyectos: true, video: true, proceso: true, porque: true, faq: true, contacto: true }, G.secciones || {});
   if (!P.video) vis.video = false;
   Object.entries(vis).forEach(([id, v]) => { const el = document.getElementById(id); if (el) el.hidden = !v; });
-  const MENU = [["servicios", "Servicios"], ["proyectos", "Proyectos"], ["proceso", "Cómo trabajo"], ["faq", "Preguntas"], ["contacto", "Contacto"]];
+  const MENU = [["servicios", "Servicios"], ["planes", "Planes"], ["proyectos", "Proyectos"], ["proceso", "Cómo trabajo"], ["faq", "Preguntas"], ["contacto", "Contacto"]];
   htm("#menu", MENU.filter(([id]) => vis[id]).map(([id, t]) => `<li><a href="#${id}">${t}</a></li>`).join(""));
   txt("#btn-barra", G.boton_barra); $("#btn-barra").hidden = !vis.contacto;
 
@@ -114,10 +114,30 @@ function pintar(D) {
     $("#tabs").addEventListener("click", () => { auto.listo = true; }, { once: true });
   }
 
+  /* Planes */
+  txt("#pl-etiqueta", PL.etiqueta); htm("#pl-titulo", em(PL.titulo)); txt("#pl-sub", PL.subtitulo);
+  htm("#lista-planes", lista(PL.planes).map((p, i) => `<article class="plan rev d${i + 1}${p.destacado ? " destacado" : ""}">
+    ${p.destacado && p.etiqueta_destacado ? `<span class="plan-badge">${esc(p.etiqueta_destacado)}</span>` : ""}
+    <h3>${esc(p.nombre)}</h3><p class="para">${esc(p.para)}</p>
+    <div class="precio${p.precio ? "" : " cotiza"}">${p.precio ? esc(p.precio) : "Cotización a tu medida"}</div><div class="precio-nota">${esc(p.nota)}</div>
+    <ul class="incluye">${lista(p.incluye).map(x => `<li>${esc(x)}</li>`).join("")}</ul>
+    <a class="btn ${p.destacado ? "btn-primario" : "btn-borde"} btn-bloque" href="#contacto" data-plan="${esc(p.nombre)}">${esc(p.boton || "Cotizar")}</a>
+  </article>`).join(""));
+  txt("#todos-tit", PL.todos_titulo);
+  const check = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5 9-10"/></svg>';
+  htm("#todos", lista(PL.todos).map(t => `<li>${check}${esc(t)}</li>`).join(""));
+  $(".todos").hidden = !lista(PL.todos).length;
+
+  /* Clientes (proyectos en línea o terminados) */
+  const clientes = lista(PY.proyectos).filter(p => p.en_clientes !== false && (p.estado === "En línea" || p.estado === "Terminado"));
+  txt("#clientes-tit", PY.clientes_titulo);
+  htm("#clientes-lista", clientes.map(p => `<li>${esc(p.nombre)}</li>`).join(""));
+  $("#clientes").hidden = !clientes.length || !vis.proyectos;
+
   /* Proyectos */
   txt("#py-etiqueta", PY.etiqueta); htm("#py-titulo", em(PY.titulo));
   htm("#lista-proyectos", lista(PY.proyectos).map((p, i) => {
-    const img = p.imagen ? `<img src="${esc(p.imagen)}" alt="${esc(p.nombre)}">`
+    const img = p.imagen ? `<img src="${esc(p.imagen)}" alt="${esc(p.nombre)}" data-visor="${esc(p.nombre)} · ${esc(p.tipo)}"><span class="p-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg></span>`
       : `<div class="p-pronto"><div><b>${esc(p.nombre)}</b><span>${esc(p.estado || "Próximamente")}</span></div></div>`;
     return `<article class="proyecto rev d${(i % 2) + 1}">
       <div class="p-imagen">${img}${p.estado ? `<span class="estado" style="--c:${ESTADOS[p.estado] || "#22c55e"}">${esc(p.estado)}</span>` : ""}</div>
@@ -156,10 +176,22 @@ function pintar(D) {
   htm("#medios", medios.map(([h, i, t, v]) => `<li><a href="${esc(h)}" ${h.startsWith("http") ? 'target="_blank" rel="noopener"' : ""}><i>${ICONOS[i]}</i><span class="m-txt"><small>${t}</small>${esc(v)}</span></a></li>`).join("")
     + (P.ubicacion ? `<li><div class="m-item"><i>${ICONOS.ubicacion}</i><span class="m-txt"><small>Ubicación</small>${esc(P.ubicacion)}</span></div></li>` : ""));
 
-  /* Botón "Cotizar X" → preselecciona el servicio */
+  /* Botón "Cotizar X" → preselecciona el servicio o el plan */
+  lista(PL.planes).forEach(p => sel.insertAdjacentHTML("beforeend", `<option>Plan ${esc(p.nombre)}</option>`));
   document.addEventListener("click", e => {
     const a = e.target.closest("[data-servicio]"); if (a) sel.value = a.dataset.servicio;
+    const b = e.target.closest("[data-plan]"); if (b) sel.value = `Plan ${b.dataset.plan}`;
   });
+
+  /* Visor de capturas */
+  const visor = $("#visor"), vImg = $("#visor-img"), vTxt = $("#visor-txt");
+  const cerrar = () => { visor.hidden = true; document.body.style.overflow = ""; };
+  document.addEventListener("click", e => {
+    const im = e.target.closest("[data-visor]");
+    if (im) { vImg.src = im.src; vImg.alt = im.alt; vTxt.textContent = im.dataset.visor; visor.hidden = false; document.body.style.overflow = "hidden"; return; }
+    if (!visor.hidden && (e.target === visor || e.target.closest("#visor-cerrar"))) cerrar();
+  });
+  addEventListener("keydown", e => { if (e.key === "Escape" && !visor.hidden) cerrar(); });
 
   /* Envío del formulario (Netlify Forms) */
   const form = $("#formulario"), estado = $("#f-estado");

@@ -57,12 +57,26 @@
 
 <div class="cinta" aria-hidden="true"><div class="cinta-pista" id="cinta"></div></div>
 
+<!-- ================= CLIENTES ================= -->
+<div class="clientes" id="clientes">
+  <div class="ancho clientes-in"><span class="clientes-tit" id="clientes-tit"></span><ul class="clientes-lista" id="clientes-lista"></ul></div>
+</div>
+
 <!-- ================= SERVICIOS ================= -->
 <section class="seccion" id="servicios">
   <div class="ancho">
     <div class="titulo rev"><span class="kicker" id="sv-etiqueta"></span><h2 id="sv-titulo"></h2><p id="sv-sub"></p></div>
     <div class="tabs rev" id="tabs" role="tablist"></div>
     <div class="panel-servicio" id="panel-servicio" role="tabpanel"></div>
+  </div>
+</section>
+
+<!-- ================= PLANES ================= -->
+<section class="seccion planes-sec" id="planes">
+  <div class="ancho">
+    <div class="titulo centrado rev"><span class="kicker" id="pl-etiqueta"></span><h2 id="pl-titulo"></h2><p id="pl-sub"></p></div>
+    <div class="planes" id="lista-planes"></div>
+    <div class="todos rev"><span class="todos-tit" id="todos-tit"></span><ul id="todos"></ul></div>
   </div>
 </section>
 
@@ -136,6 +150,11 @@
   </div>
 </section>
 </main>
+
+<div class="visor" id="visor" hidden role="dialog" aria-modal="true" aria-label="Captura del proyecto">
+  <button class="visor-cerrar" id="visor-cerrar" type="button" aria-label="Cerrar">✕</button>
+  <figure><img id="visor-img" alt=""><figcaption id="visor-txt"></figcaption></figure>
+</div>
 
 <footer class="pie">
   <div class="ancho pie-grid">
