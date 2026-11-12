@@ -18,3 +18,15 @@
   for = "/entrar/*"
   [headers.values]
     X-Robots-Tag = "noindex"
+
+# Archivos internos que no deben verse en el sitio
+[[redirects]]
+  from = "/README.md"
+  to = "/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/netlify.toml"
+  to = "/"
+  status = 301
+  force = true
