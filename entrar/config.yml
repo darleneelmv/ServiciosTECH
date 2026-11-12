@@ -117,11 +117,24 @@ collections:
           - { name: poster, label: "Imagen mientras carga el video", widget: image, required: false }
           - { name: tecnologias, label: "Cinta de tecnologías", widget: list, field: { name: tecnologia, label: "Tecnología", widget: string } }
           - { name: correo, label: "Correo", widget: string }
-          - { name: whatsapp, label: "WhatsApp (10 dígitos)", widget: string, required: false, hint: "Si lo pones, sale un botón para escribirte por WhatsApp." }
+          - { name: foto, label: "Tu foto (Sobre mí)", widget: image, required: false, hint: "Vertical, con buena luz." }
+          - { name: avatar, label: "Foto pequeña redonda (portada)", widget: image, required: false, hint: "Recorte de tu cara, cuadrado." }
+          - { name: whatsapp, label: "WhatsApp (10 dígitos)", widget: string, required: false, hint: "Activa el botón flotante y los botones de WhatsApp." }
+          - { name: whatsapp_mensaje, label: "Mensaje automático de WhatsApp", widget: text, required: false, hint: "Es el texto que ya aparece escrito cuando alguien te abre el chat." }
           - { name: ubicacion, label: "Ubicación", widget: string, required: false }
           - { name: github, label: "GitHub", widget: string, required: false }
           - { name: linkedin, label: "LinkedIn", widget: string, required: false }
           - { name: instagram, label: "Instagram", widget: string, required: false }
+
+      - name: sobre
+        label: "🙋‍♀️ Sobre mí"
+        file: contenido/sobre.json
+        fields:
+          - { name: etiqueta, label: "Texto pequeño", widget: string }
+          - { name: titulo, label: "Título", widget: string }
+          - { name: parrafos, label: "Párrafos", widget: list, field: { name: parrafo, label: "Párrafo", widget: text } }
+          - { name: datos, label: "Datos rápidos", widget: list, required: false, field: { name: dato, label: "Dato", widget: string } }
+          - { name: boton, label: "Texto del botón de WhatsApp", widget: string, required: false }
 
       - name: video
         label: "🎬 Sección de video"
@@ -197,6 +210,7 @@ collections:
               - { name: servicios, label: "Servicios", widget: boolean, default: true }
               - { name: planes, label: "Planes", widget: boolean, default: true }
               - { name: proyectos, label: "Proyectos", widget: boolean, default: true }
+              - { name: sobre, label: "Sobre mí", widget: boolean, default: true }
               - { name: video, label: "Video", widget: boolean, default: true }
               - { name: proceso, label: "Cómo trabajo", widget: boolean, default: true }
               - { name: porque, label: "¿Por qué conmigo?", widget: boolean, default: true }

@@ -12,6 +12,7 @@
     "servicios": true,
     "planes": true,
     "proyectos": true,
+    "sobre": true,
     "video": true,
     "proceso": true,
     "porque": true,

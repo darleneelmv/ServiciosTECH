@@ -5,7 +5,7 @@
 (() => {
 "use strict";
 
-const ARCHIVOS = ["general", "perfil", "servicios", "planes", "proyectos", "video", "proceso", "porque", "faq", "contacto"];
+const ARCHIVOS = ["general", "perfil", "servicios", "planes", "proyectos", "sobre", "video", "proceso", "porque", "faq", "contacto"];
 const $ = (s, c = document) => c.querySelector(s);
 const $$ = (s, c = document) => [...c.querySelectorAll(s)];
 const esc = s => String(s ?? "").replace(/[&<>"']/g, m => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m]));
@@ -52,7 +52,7 @@ async function cargar() {
 }
 
 function pintar(D) {
-  const G = D.general || {}, P = D.perfil || {}, SV = D.servicios || {}, PL = D.planes || {}, PY = D.proyectos || {}, V = D.video || {},
+  const G = D.general || {}, P = D.perfil || {}, SV = D.servicios || {}, PL = D.planes || {}, SO = D.sobre || {}, PY = D.proyectos || {}, V = D.video || {},
         PR = D.proceso || {}, PQ = D.porque || {}, F = D.faq || {}, C = D.contacto || {};
 
   if (G.seo?.titulo) document.title = G.seo.titulo;
@@ -63,10 +63,10 @@ function pintar(D) {
   if (col.fondo) { raiz.setProperty("--fondo", col.fondo); raiz.setProperty("--fondo-2", `color-mix(in srgb, ${col.fondo} 88%, #1e293b)`); }
 
   /* Secciones y menú */
-  const vis = Object.assign({ servicios: true, planes: true, proyectos: true, video: true, proceso: true, porque: true, faq: true, contacto: true }, G.secciones || {});
+  const vis = Object.assign({ servicios: true, planes: true, proyectos: true, sobre: true, video: true, proceso: true, porque: true, faq: true, contacto: true }, G.secciones || {});
   if (!P.video) vis.video = false;
   Object.entries(vis).forEach(([id, v]) => { const el = document.getElementById(id); if (el) el.hidden = !v; });
-  const MENU = [["servicios", "Servicios"], ["planes", "Planes"], ["proyectos", "Proyectos"], ["proceso", "Cómo trabajo"], ["faq", "Preguntas"], ["contacto", "Contacto"]];
+  const MENU = [["servicios", "Servicios"], ["planes", "Planes"], ["proyectos", "Proyectos"], ["sobre", "Sobre mí"], ["proceso", "Cómo trabajo"], ["faq", "Preguntas"], ["contacto", "Contacto"]];
   htm("#menu", MENU.filter(([id]) => vis[id]).map(([id, t]) => `<li><a href="#${id}">${t}</a></li>`).join(""));
   txt("#btn-barra", G.boton_barra); $("#btn-barra").hidden = !vis.contacto;
 
@@ -78,6 +78,22 @@ function pintar(D) {
   txt("#h-etiqueta", P.etiqueta); htm("#h-titular", em(P.titular)); txt("#h-desc", P.descripcion);
   txt("#h-btn1", P.boton_principal); txt("#h-btn2", P.boton_secundario);
   txt("#h-nombre", P.nombre); txt("#h-titulo", P.titulo_profesional);
+  if (P.avatar || P.foto) { const a = $("#h-avatar"); a.src = P.avatar || P.foto; a.alt = P.nombre || ""; a.hidden = false; }
+
+  /* WhatsApp con mensaje listo */
+  const waNum = String(P.whatsapp || "").replace(/\D/g, "");
+  const waLink = waNum ? `https://wa.me/${waNum.length === 10 ? "52" + waNum : waNum}?text=${encodeURIComponent(P.whatsapp_mensaje || "Hola, me gustaría información.")}` : "";
+  const waFlot = $("#wa-flotante");
+  if (waLink) { waFlot.href = waLink; waFlot.hidden = false; setTimeout(() => waFlot.classList.add("ver"), 1200); }
+
+  /* Sobre mí */
+  txt("#so-etiqueta", SO.etiqueta); htm("#so-titulo", em(SO.titulo));
+  if (P.foto) { $("#so-foto").src = P.foto; $("#so-foto").alt = P.nombre || ""; } else $(".sobre-foto").hidden = true;
+  txt("#so-chip", P.titulo_profesional ? "Ing. en TIC" : "");
+  htm("#so-parrafos", lista(SO.parrafos).map((p, i) => `<p class="rev d${Math.min(i + 1, 3)}">${em(p)}</p>`).join(""));
+  htm("#so-datos", lista(SO.datos).map(d => `<li>${esc(d)}</li>`).join(""));
+  const soWa = $("#so-wa");
+  if (waLink) { soWa.href = waLink; soWa.innerHTML = `${ICONOS.whatsapp}${esc(SO.boton || "Escríbeme por WhatsApp")}`; } else soWa.hidden = true;
   for (const id of ["#h-video", "#v-video"]) {
     const v = $(id); if (!P.video) continue;
     if (P.poster) v.poster = P.poster;
@@ -165,10 +181,9 @@ function pintar(D) {
   const sel = $("#f-servicio");
   servicios.forEach(s => sel.insertAdjacentHTML("beforeend", `<option>${esc(s.nombre)}</option>`));
   sel.insertAdjacentHTML("beforeend", `<option>Otro</option>`);
-  const wa = String(P.whatsapp || "").replace(/\D/g, "");
   const medios = [
     P.correo && [`mailto:${P.correo}`, "correo", "Correo", P.correo],
-    wa && [`https://wa.me/${wa.length === 10 ? "52" + wa : wa}`, "whatsapp", "WhatsApp", P.whatsapp],
+    waLink && [waLink, "whatsapp", "WhatsApp · respuesta rápida", P.whatsapp],
     P.github && [P.github, "github", "GitHub", P.github.replace(/^https?:\/\//, "")],
     P.linkedin && [P.linkedin, "linkedin", "LinkedIn", P.linkedin.replace(/^https?:\/\/(www\.)?/, "")],
     P.instagram && [P.instagram, "instagram", "Instagram", P.instagram.replace(/^https?:\/\/(www\.)?/, "")]

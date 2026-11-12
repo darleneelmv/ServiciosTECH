@@ -1,0 +1,14 @@
+{
+  "etiqueta": "Sobre mí",
+  "titulo": "Hola, soy *Darlene*",
+  "parrafos": [
+    "Soy Ingeniera en Tecnologías de la Información y Comunicación. Ayudo a negocios y creadores a tener presencia digital profesional: páginas web, sistemas y automatizaciones que de verdad se usan.",
+    "Me gusta entender cómo funciona tu negocio antes de escribir una línea de código. Así lo que construyo te ahorra tiempo, te trae clientes y lo puedes manejar tú."
+  ],
+  "datos": [
+    "Ingeniera en TIC",
+    "Atiendo en todo México, a distancia",
+    "Trato directo de principio a fin"
+  ],
+  "boton": "Escríbeme por WhatsApp"
+}
