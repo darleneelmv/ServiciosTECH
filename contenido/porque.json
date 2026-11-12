@@ -1,0 +1,22 @@
+{
+  "etiqueta": "¿Por qué conmigo?",
+  "titulo": "Tecnología *sin complicaciones*",
+  "razones": [
+    {
+      "titulo": "Ingeniera en TIC",
+      "texto": "Formación en tecnologías de la información: lo que hago está bien construido por dentro, no solo por fuera."
+    },
+    {
+      "titulo": "Trato directo",
+      "texto": "Hablas conmigo de principio a fin, sin intermediarios ni respuestas de robot."
+    },
+    {
+      "titulo": "Tú tienes el control",
+      "texto": "Te entrego paneles para que actualices tu contenido sin depender de nadie."
+    },
+    {
+      "titulo": "Pensado para crecer",
+      "texto": "Empezamos con lo que necesitas hoy y lo vamos ampliando cuando tu negocio crezca."
+    }
+  ]
+}

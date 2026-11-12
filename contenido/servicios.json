@@ -1,0 +1,59 @@
+{
+  "etiqueta": "Servicios",
+  "titulo": "Todo lo que tu negocio necesita en *digital*",
+  "subtitulo": "Elige un servicio para ver qué incluye. Si no ves lo que buscas, escríbeme: lo armamos a tu medida.",
+  "servicios": [
+    {
+      "nombre": "Páginas web y tiendas",
+      "icono": "web",
+      "resumen": "Sitios rápidos, bonitos y listos para celular que hacen que tu negocio se vea profesional y te encuentren en Google.",
+      "incluye": [
+        "Landing pages y sitios corporativos",
+        "Tiendas en línea con catálogo y pagos",
+        "Dominio, hosting y correo con tu marca",
+        "Google Maps, WhatsApp y redes conectadas",
+        "SEO básico para aparecer en Google"
+      ],
+      "imagen": "/media/proyectos/tienda.jpg"
+    },
+    {
+      "nombre": "Sistemas para negocios",
+      "icono": "sistema",
+      "resumen": "Deja las libretas y los Excel sueltos: un panel con todo tu negocio en un solo lugar, desde tu compu o tu celular.",
+      "incluye": [
+        "Inventario y punto de venta",
+        "Clientes, membresías y pagos",
+        "Citas y reservaciones",
+        "Reportes y gráficas en tiempo real",
+        "Usuarios con permisos para tu equipo"
+      ],
+      "imagen": "/media/proyectos/sistema.jpg"
+    },
+    {
+      "nombre": "Portafolios y marca",
+      "icono": "portafolio",
+      "resumen": "Portafolios para creadores, profesionistas y marcas personales, con un panel para que tú misma los actualices.",
+      "incluye": [
+        "Portafolios UGC y para creadores",
+        "Marca personal y link in bio",
+        "Panel para editar sin código",
+        "Videos, fotos y métricas",
+        "Dominio propio opcional"
+      ],
+      "imagen": "/media/proyectos/portafolio-ugc.jpg"
+    },
+    {
+      "nombre": "Automatización y soporte",
+      "icono": "auto",
+      "resumen": "Que tu negocio responda, agende y recuerde solo. Y alguien de confianza para tu tecnología.",
+      "incluye": [
+        "Chatbots y respuestas automáticas",
+        "Recordatorios y formularios inteligentes",
+        "Integraciones con Google Sheets y correo",
+        "Soporte técnico, redes y equipos",
+        "Capacitación para ti y tu equipo"
+      ],
+      "imagen": "/media/proyectos/automatizacion.jpg"
+    }
+  ]
+}

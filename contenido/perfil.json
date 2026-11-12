@@ -1,0 +1,36 @@
+{
+  "nombre": "Darlene López",
+  "titulo_profesional": "Ingeniería en Tecnologías de la Información y Comunicación",
+  "etiqueta": "Ing. en TIC · México",
+  "titular": "Tecnología que hace *crecer* tu negocio.",
+  "palabras": [
+    "páginas web",
+    "tiendas en línea",
+    "sistemas para tu negocio",
+    "automatizaciones",
+    "portafolios"
+  ],
+  "descripcion": "Diseño y desarrollo páginas web, sistemas y automatizaciones para negocios y creadores. Trato directo conmigo, de la idea a la entrega.",
+  "boton_principal": "Cotiza tu proyecto",
+  "boton_secundario": "Ver proyectos",
+  "video": "/media/promo.mp4",
+  "poster": "/media/promo-portada.jpg",
+  "tecnologias": [
+    "HTML · CSS · JavaScript",
+    "Python",
+    "SQL y bases de datos",
+    "Netlify",
+    "GitHub",
+    "Paneles de administración",
+    "APIs",
+    "WhatsApp",
+    "Google Workspace",
+    "Diseño responsivo"
+  ],
+  "correo": "lopezvazquezdarlene@gmail.com",
+  "whatsapp": "",
+  "ubicacion": "México · trabajo a distancia",
+  "github": "https://github.com/darleneelmv",
+  "linkedin": "",
+  "instagram": ""
+}

@@ -1,0 +1,26 @@
+{
+  "etiqueta": "Preguntas frecuentes",
+  "titulo": "Lo que más me *preguntan*",
+  "preguntas": [
+    {
+      "pregunta": "¿Cuánto cuesta una página web?",
+      "respuesta": "Depende de lo que necesites: no cuesta lo mismo una página de una sección que una tienda en línea. Escríbeme y te mando una cotización sin compromiso."
+    },
+    {
+      "pregunta": "¿Cuánto tiempo tarda?",
+      "respuesta": "Depende del tamaño del proyecto. En la cotización te doy fechas claras para cada etapa."
+    },
+    {
+      "pregunta": "¿Puedo editar mi página yo misma?",
+      "respuesta": "Sí. Puedo incluir un panel de administración para que cambies textos, fotos y productos sin saber programar."
+    },
+    {
+      "pregunta": "¿Incluye dominio y hosting?",
+      "respuesta": "Te ayudo a contratar y configurar tu dominio (tunegocio.com), hosting y correo con tu marca."
+    },
+    {
+      "pregunta": "¿Trabajas solo en mi ciudad?",
+      "respuesta": "Trabajo a distancia con negocios de todo México. Todo se puede hacer por videollamada y WhatsApp."
+    }
+  ]
+}

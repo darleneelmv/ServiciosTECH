@@ -1,0 +1,56 @@
+{
+  "etiqueta": "Proyectos",
+  "titulo": "Trabajo *real*, negocios reales",
+  "proyectos": [
+    {
+      "nombre": "Agrofertil y Equipos",
+      "tipo": "Sitio web corporativo",
+      "descripcion": "Sitio con catálogo de productos, contacto directo por WhatsApp y diseño adaptado a celular.",
+      "imagen": "/media/proyectos/agrofertil.jpg",
+      "link": "https://agrofertil.com.mx",
+      "estado": "En línea",
+      "etiquetas": [
+        "Sitio web",
+        "Catálogo",
+        "Responsivo"
+      ]
+    },
+    {
+      "nombre": "Strong Gym Puruándiro",
+      "tipo": "Sitio web + sistema de gestión",
+      "descripcion": "Página del gimnasio con planes y promociones, más un sistema para socios, pagos y personal.",
+      "imagen": "/media/proyectos/stronggym.jpg",
+      "link": "",
+      "estado": "Terminado",
+      "etiquetas": [
+        "Sitio web",
+        "Sistema",
+        "Membresías"
+      ]
+    },
+    {
+      "nombre": "Portafolio UGC",
+      "tipo": "Portafolio para creadora",
+      "descripcion": "Portafolio con videos por categoría y panel de administración para editarlo sin código.",
+      "imagen": "/media/proyectos/portafolio-ugc.jpg",
+      "link": "",
+      "estado": "Terminado",
+      "etiquetas": [
+        "Portafolio",
+        "Panel",
+        "Videos"
+      ]
+    },
+    {
+      "nombre": "Gold's Gym",
+      "tipo": "Proyecto en camino",
+      "descripcion": "Muy pronto podrás ver este proyecto aquí.",
+      "imagen": "",
+      "link": "",
+      "estado": "Próximamente",
+      "etiquetas": [
+        "Próximamente"
+      ]
+    }
+  ]
+}

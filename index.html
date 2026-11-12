@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#070b14">
+<title>Darlene López · Ingeniería en TIC</title>
+<meta name="description" content="Páginas web, tiendas en línea, sistemas para negocios, portafolios y automatización.">
+<meta property="og:title" content="Darlene López · Ingeniería en TIC">
+<meta property="og:description" content="Páginas web, sistemas para negocios, portafolios y automatización.">
+<meta property="og:image" content="/media/promo-portada.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2216%22 fill=%22%23070b14%22/><text x=%2232%22 y=%2243%22 font-family=%22Arial%22 font-weight=%22700%22 font-size=%2230%22 text-anchor=%22middle%22 fill=%22%2322d3ee%22>DL</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body class="cargando">
+<div class="foco" aria-hidden="true"></div>
+<div class="progreso" id="progreso" aria-hidden="true"></div>
+
+<header class="barra" id="barra">
+  <a class="logo" href="#inicio" id="logo"></a>
+  <nav aria-label="Secciones"><ul class="menu" id="menu"></ul></nav>
+  <a class="btn btn-primario btn-chico" href="#contacto" id="btn-barra"></a>
+  <button class="hamburguesa" id="hamburguesa" type="button" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span></button>
+</header>
+
+<main>
+<!-- ================= PORTADA ================= -->
+<section class="hero" id="inicio">
+  <div class="hero-fondo" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i><div class="rejilla"></div></div>
+  <div class="ancho hero-grid">
+    <div class="hero-texto">
+      <span class="kicker intro" id="h-etiqueta"></span>
+      <h1 class="intro" id="h-titular"></h1>
+      <p class="hero-escribe intro" aria-live="off">Hago <span class="escribe" id="escribe"></span><span class="cursor">|</span></p>
+      <p class="hero-desc intro" id="h-desc"></p>
+      <div class="cta intro">
+        <a class="btn btn-primario magnetico" href="#contacto"><span id="h-btn1"></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-borde magnetico" href="#proyectos" id="h-btn2"></a>
+      </div>
+      <div class="firma intro"><b id="h-nombre"></b><span id="h-titulo"></span></div>
+    </div>
+    <div class="hero-visual intro">
+      <div class="ventana" data-tilt>
+        <div class="ventana-barra"><i></i><i></i><i></i><span>darlene.dev</span></div>
+        <video id="h-video" muted loop playsinline autoplay preload="metadata"></video>
+      </div>
+      <div class="flotante f1"><span class="punto"></span>Sitio publicado</div>
+      <div class="flotante f2"><b>⚡</b> Carga rápida · móvil</div>
+    </div>
+  </div>
+</section>
+
+<div class="cinta" aria-hidden="true"><div class="cinta-pista" id="cinta"></div></div>
+
+<!-- ================= SERVICIOS ================= -->
+<section class="seccion" id="servicios">
+  <div class="ancho">
+    <div class="titulo rev"><span class="kicker" id="sv-etiqueta"></span><h2 id="sv-titulo"></h2><p id="sv-sub"></p></div>
+    <div class="tabs rev" id="tabs" role="tablist"></div>
+    <div class="panel-servicio" id="panel-servicio" role="tabpanel"></div>
+  </div>
+</section>
+
+<!-- ================= PROYECTOS ================= -->
+<section class="seccion seccion-alt" id="proyectos">
+  <div class="ancho">
+    <div class="titulo rev"><span class="kicker" id="py-etiqueta"></span><h2 id="py-titulo"></h2></div>
+    <div class="proyectos" id="lista-proyectos"></div>
+  </div>
+</section>
+
+<!-- ================= VIDEO ================= -->
+<section class="seccion" id="video">
+  <div class="ancho">
+    <div class="titulo centrado rev"><span class="kicker" id="v-etiqueta"></span><h2 id="v-titulo"></h2><p id="v-sub"></p></div>
+    <div class="video-grande rev">
+      <video id="v-video" muted loop playsinline preload="metadata"></video>
+      <button class="sonido" id="v-sonido" type="button" aria-label="Activar sonido">
+        <svg viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z"/></svg><span>Reproducir</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROCESO ================= -->
+<section class="seccion claro" id="proceso">
+  <div class="ancho">
+    <div class="titulo rev"><span class="kicker" id="pr-etiqueta"></span><h2 id="pr-titulo"></h2></div>
+    <ol class="pasos" id="pasos"></ol>
+  </div>
+</section>
+
+<!-- ================= POR QUÉ ================= -->
+<section class="seccion" id="porque">
+  <div class="ancho">
+    <div class="titulo centrado rev"><span class="kicker" id="pq-etiqueta"></span><h2 id="pq-titulo"></h2></div>
+    <div class="razones" id="razones"></div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="seccion claro" id="faq">
+  <div class="ancho faq-grid">
+    <div class="titulo rev"><span class="kicker" id="f-etiqueta"></span><h2 id="f-titulo"></h2></div>
+    <div class="preguntas" id="preguntas"></div>
+  </div>
+</section>
+
+<!-- ================= CONTACTO ================= -->
+<section class="seccion contacto" id="contacto">
+  <div class="ancho contacto-grid">
+    <div class="rev">
+      <span class="kicker" id="c-etiqueta"></span>
+      <h2 class="c-titulo" id="c-titulo"></h2>
+      <p class="c-sub" id="c-sub"></p>
+      <ul class="medios" id="medios"></ul>
+    </div>
+    <form class="formulario rev d2" id="formulario" name="cotizacion" method="POST" data-netlify="true" netlify-honeypot="campo-trampa">
+      <input type="hidden" name="form-name" value="cotizacion">
+      <p hidden><label>No llenar: <input name="campo-trampa"></label></p>
+      <div class="fila">
+        <label class="campo"><span>Nombre</span><input name="nombre" required autocomplete="name" placeholder="Tu nombre"></label>
+        <label class="campo"><span>WhatsApp</span><input name="whatsapp" type="tel" autocomplete="tel" placeholder="10 dígitos"></label>
+      </div>
+      <label class="campo"><span>Correo</span><input name="correo" type="email" required autocomplete="email" placeholder="tu@correo.com"></label>
+      <label class="campo"><span>¿Qué necesitas?</span><select name="servicio" id="f-servicio"><option value="">Elige un servicio</option></select></label>
+      <label class="campo"><span>Cuéntame de tu proyecto</span><textarea name="mensaje" rows="4" required placeholder="Mi negocio es… y necesito…"></textarea></label>
+      <button class="btn btn-primario btn-bloque" type="submit" id="f-boton"></button>
+      <p class="f-estado" id="f-estado" role="status"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="pie">
+  <div class="ancho pie-grid">
+    <a class="logo" href="#inicio" id="logo-pie"></a>
+    <span id="pie"></span>
+    <span class="pie-anio">© <span id="anio"></span></span>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="/js/sitio.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "seo": {
+    "titulo": "Darlene López · Ingeniería en TIC | Páginas web, sistemas y automatización",
+    "descripcion": "Páginas web, tiendas en línea, sistemas para negocios, portafolios y automatización. Ingeniera en Tecnologías de la Información y Comunicación en México."
+  },
+  "colores": {
+    "acento": "#4f7cff",
+    "acento2": "#22d3ee",
+    "fondo": "#070b14"
+  },
+  "secciones": {
+    "servicios": true,
+    "proyectos": true,
+    "video": true,
+    "proceso": true,
+    "porque": true,
+    "faq": true,
+    "contacto": true
+  },
+  "boton_barra": "Cotiza tu proyecto",
+  "pie": "Darlene López · Ingeniería en Tecnologías de la Información y Comunicación"
+}

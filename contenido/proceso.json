@@ -1,0 +1,26 @@
+{
+  "etiqueta": "Cómo trabajo",
+  "titulo": "De la idea a tu proyecto *funcionando*",
+  "pasos": [
+    {
+      "titulo": "Platicamos",
+      "texto": "Me cuentas tu negocio y lo que necesitas. La primera asesoría no tiene costo."
+    },
+    {
+      "titulo": "Propuesta",
+      "texto": "Te mando una cotización clara: qué incluye, cuánto cuesta y cuándo queda."
+    },
+    {
+      "titulo": "Diseño y desarrollo",
+      "texto": "Construyo tu proyecto y te enseño avances para que opines en el camino."
+    },
+    {
+      "titulo": "Entrega",
+      "texto": "Lo publicamos y te enseño a usarlo. Si lleva panel, lo editas tú."
+    },
+    {
+      "titulo": "Soporte",
+      "texto": "Sigo contigo para dudas, cambios y mejoras después de entregar."
+    }
+  ]
+}
